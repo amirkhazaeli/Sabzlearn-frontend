@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'IRANSans';
+    src: url('../Assets/fonts/Sans\ a4fran3.ttf') format('truetype');
+}
+
+:root {
+    --font-family: 'IRANSans';
+    --primary-color: #2ED573;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+body{
+    font-family: var(--font-family);
+    color: RED;
+}
