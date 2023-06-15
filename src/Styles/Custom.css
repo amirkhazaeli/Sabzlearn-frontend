@@ -1,3 +1,4 @@
+@import url('./Reset.css');
 @font-face {
     font-family: 'IRANSans';
     src: url('../Assets/fonts/Sans\ a4fran3.ttf') format('truetype');
@@ -9,14 +10,18 @@
     --secondary-color: #282938;
     --white-color: #ffffff;
     --black-color: #000000;
+    --green-color: #2ED573;
 }
 
 body{
     font-family: var(--font-family);
     background-color: var(--primary-color);
+    color: var(--white-color);
     direction: rtl;
 }
 
 .container{
-    width: 1000px;
+    width: 1100px;
+    margin: 0 auto;
 }
+
