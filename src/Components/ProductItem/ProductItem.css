@@ -1,0 +1,46 @@
+.product-item{
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 2rem;
+    position: relative;
+}
+.product-item img{
+    width: 100%;
+    object-fit: cover;
+}
+.product-information{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.product-information .product-category{
+    background-color: rgb(20, 77, 201);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+.product-information .product-price{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.product-information .product-price .course-student{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    align-items: center;
+}
+.product-information .product-price .course-student .student-count{
+    color: rgba(255, 206, 100, 0.616);
+}
+.product-off{
+    position: absolute;
+    top: .8rem;
+    right: .5rem;
+    background-color: rgb(253, 32, 32);
+    padding: .2rem .5rem;
+    border-radius: .5rem;
+}

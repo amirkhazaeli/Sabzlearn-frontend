@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTelegram, faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 import './TopHeader.css'
+import { Container } from 'react-bootstrap';
 export default function TopHeader() {
     return (
         <div className='top-header'>
-            <div className='top-header-wrapper container'>
+            <Container fluid='lg'>
+            <div className='top-header-wrapper '>
                 <div className='top-header-right'>
                     <ul>
                         <li className='Cooperation'>
@@ -25,7 +27,7 @@ export default function TopHeader() {
                     </div>
                 </div>
             </div>
-
+            </Container>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 .top-header {
     background-color: var(--secondary-color);
     padding: .5rem 0;
+    opacity: 0.7;
 }
 
 .top-header-wrapper {
