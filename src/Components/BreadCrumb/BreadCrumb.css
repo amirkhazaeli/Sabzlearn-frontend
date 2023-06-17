@@ -1,0 +1,11 @@
+.BreadCrumb{
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: .5rem;
+}
+.BreadCrumb ul{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
