@@ -1,10 +1,12 @@
-import Header from "./Layout/Header/Header";
-import Home from "./Pages/Home/Home";
-
+import { useRoutes } from "react-router-dom";
+import Footer from "./Components/Footer/Footer";
+import { Routes } from "./Router";
 function App() {
+  let router = useRoutes(Routes)
   return (
    <>
-   <Home />
+   {router}
+   <Footer />
    </>
   );
 }
