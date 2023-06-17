@@ -1,0 +1,82 @@
+.course-introduction{
+    margin-top: 2rem;
+}
+.course-introduction-title{
+    color: var(--green-color);
+    font-size: 1.5rem;
+}
+.course-introduction-video{
+    margin-top: 2rem;
+}
+.course-introduction-video video{
+   width: 100%;
+}
+.course-introduction-video .course-point{
+    background-color: rgb(112, 112, 112);
+    margin-top: 1rem;
+    padding: .5rem;
+    line-height: 2rem;
+    border-radius: .5rem;
+}
+.course-introduction-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+}
+.course-tags{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+.course-tags span{
+    font-size: .5rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: rgb(29, 26, 235);
+}
+.course-introduction-price{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.Course-feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+.course-introduction-btns{
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+.course-introduction-btns .Watch-videos-btn{
+    padding: 1rem ;
+    background-color: rgb(29, 26, 235);
+    color: white;
+    border-radius: .5rem;
+    border: none;
+}
+.course-introduction-btns .status-btn{
+    padding: 1rem 1.5rem;
+    background-color: var(--green-color);
+    color: white;
+    border-radius: .5rem;
+    border: none;
+}
+.course-info-item{
+    margin-top: 2rem;
+    background-color: var(--secondary-color);
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    border-radius: .5rem;
+    border-right: 1px dashed;
+}
+.course-introduction-desc{
+    margin-top: 2rem;
+    text-align: justify;
+    line-height: 2rem;
+}
