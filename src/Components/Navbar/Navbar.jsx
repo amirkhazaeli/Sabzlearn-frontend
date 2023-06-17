@@ -4,7 +4,21 @@ import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faBars, faUser, faBasketShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { Container } from 'react-bootstrap';
+import { useState } from 'react';
 export default function NavbarComponent() {
+  const [showMenu, setShowMenu] = useState(false)
+  const [showResponsiveSidebar,setShowResponsiveSidebar] = useState(false)
+
+  function handleMouseOver() {
+    setShowMenu(true);
+  }
+
+  function handleMouseLeave() {
+    setShowMenu(false);
+  }
+  function handleShowSidebar(){
+    setShowResponsiveSidebar(!showResponsiveSidebar)
+  }
   return (
     <div className='navbar-section'>
       <Container fluid="lg">
@@ -12,13 +26,25 @@ export default function NavbarComponent() {
           <div className='navbar-right'>
             <img src={logo} alt="" />
             <ul>
-              <li>
+              <li onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} >
                 فرانت اند
                 <FontAwesomeIcon icon={faCaretDown} />
+
+                <div className={`sub-menu ${showMenu && 'active'}`}>
+                  <ul>
+                    <li>html</li>
+                    <li>js</li>
+                    <li>front</li>
+                    <li>react</li>
+                  </ul>
+                </div>
+
+
               </li>
               <li>
                 امنیت
                 <FontAwesomeIcon icon={faCaretDown} />
+
               </li>
               <li>
                 پایتون
@@ -51,10 +77,25 @@ export default function NavbarComponent() {
       <Container fluid>
         <div className='navbar-responsive'>
           <div className='navbar-menu-icon'>
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBars} onClick={handleShowSidebar}/>
+            <div className={`sidebar ${showResponsiveSidebar && 'active'}`} >
+               <div>
+                <div className='sidebar-close-icon'>
+                  
+                </div>
+                <input type="" name="" value=""/>
+                <ul>
+                  <li>فرانت اند</li>
+                  <li>امنیت</li>
+                  <li>پایتون</li>
+                  <li>مهارت های نرم</li>
+                  <li>مقالات</li>
+                </ul>
+               </div>
+            </div>
           </div>
           <div className='navbar-responsive-logo'>
-          <img src={logo} alt="" />
+            <img src={logo} alt="" />
           </div>
           <div className='icons'>
             <button>
