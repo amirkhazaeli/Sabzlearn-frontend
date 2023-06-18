@@ -1,0 +1,18 @@
+.course-topic {
+    margin-top: 10rem;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+.course-topic-wrapper {
+    width: 80%;
+    margin: auto;
+}
+.course-topic-header{
+    display: flex;
+    justify-content: space-between;
+}
+.course-topic-header .course-topic-info {
+    display: flex;
+    column-gap: 1rem;
+}
