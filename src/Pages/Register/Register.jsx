@@ -3,8 +3,24 @@ import { Container } from 'react-bootstrap'
 import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
 import './Register.css'
-import { requiredValueValidator, minValueValidator, maxValueValidator, emailValueValidator } from '../../Validator/Rules'
+import { requiredValueValidator, minValueValidator, maxValueValidator, emailValueValidator } from '../../Validator/Rules';
+import {useForm} from '../../Hooks/useForm'
 export default function Regeister() {
+  const [formState, onInputHandler] = useForm({
+    userName: {
+      value: '',
+      isValid: false
+    },
+    email: {
+      value: '',
+      isValid: false
+    },
+    password: {
+      value: '',
+      isValid: false
+    },
+  }, false)
+  console.log(formState);
   return (
     <>
       <Header />
@@ -20,7 +36,7 @@ export default function Regeister() {
               </div>
             </div>
             <div className='register-box-form'>
-              <Input element='Input' placeholder='نام کاربری   ' className='login-input' type='text' validitation=
+              <Input element='Input' id='userName' placeholder='نام کاربری   ' className='register-input' type='text' validitation=
                 {
                   [
                     requiredValueValidator(),
@@ -28,8 +44,9 @@ export default function Regeister() {
                     maxValueValidator(18)
                   ]
                 }
+                onInputHandler={onInputHandler}
               />
-              <Input element='Input' placeholder='آدرس ایمیل' className='login-input' type='text' validitation=
+              <Input element='Input' id='email' placeholder='آدرس ایمیل' className='register-input' type='text' validitation=
                 {
                   [
                     requiredValueValidator(),
@@ -37,15 +54,19 @@ export default function Regeister() {
                     maxValueValidator(18),
                     emailValueValidator()
                   ]
-                }/>
-              <Input element='Input' placeholder='رمز عبور' className='login-input' type='password' validitation=
+                } 
+                onInputHandler={onInputHandler}
+                />
+              <Input element='Input' id='password' placeholder='رمز عبور' className='register-input' type='password' validitation=
                 {
                   [
                     requiredValueValidator(),
                     minValueValidator(4),
                     maxValueValidator(10)
                   ]
-                }/>
+                }
+                onInputHandler={onInputHandler}
+                />
               <button>عضویت</button>
             </div>
             <div className='register-box-footer'>

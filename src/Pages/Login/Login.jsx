@@ -4,7 +4,19 @@ import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
 import './Login.css'
 import { requiredValueValidator, minValueValidator, maxValueValidator, emailValueValidator } from '../../Validator/Rules'
+import {useForm} from '../../Hooks/useForm'
 export default function Login() {
+  const [formState,onInputHandler] = useForm({
+    userName:{
+      value: '',
+      isValid: false
+    },
+    password:{
+      value: '',
+      isValid: false
+    },
+  }, false)
+console.log(formState);
   return (
     <>
     <Header />
@@ -20,22 +32,26 @@ export default function Login() {
             </div>
           </div>
           <div className='login-box-form'>
-            <Input element='Input' placeholder='نام کاربری یا آدرس ایمیل' className='login-input' type='text' validitation=
+            <Input element='Input' id='userName' placeholder='نام کاربری یا آدرس ایمیل' className='login-input' type='text' validitation=
                 {
                   [
                     requiredValueValidator(),
                     minValueValidator(8),
                     maxValueValidator(18)
                   ]
-                }/>
-            <Input element='Input' placeholder='رمز عبور'  className='login-input' type='text' validitation=
+                }
+                onInputHandler={onInputHandler}
+                />
+            <Input element='Input' id='password' placeholder='رمز عبور'  className='login-input' type='text' validitation=
                 {
                   [
                     requiredValueValidator(),
                     minValueValidator(8),
                     maxValueValidator(18)
                   ]
-                }/>
+                }
+                onInputHandler={onInputHandler}
+                />
             <button>ورود</button>
             <h3>رمز عبور را فراموش کرده اید؟</h3>
           </div>

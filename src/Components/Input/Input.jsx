@@ -1,7 +1,7 @@
 import React from 'react'
 import { useReducer } from 'react'
-import './Input.css'
 import validator from '../../Validator/Validator'
+import { useEffect } from 'react'
 
 const inputReducer = (state, action) => {
     switch (action.type) {
@@ -23,7 +23,10 @@ export default function Input(props) {
         isValid: false,
     })
 
-console.log(mainInput);
+    useEffect(()=>{
+        props.onInputHandler(props.id , mainInput.value , mainInput.isValid)
+    }, [mainInput.value])
+
     const onChangeHandler = (e) => {
         Dispatch({
             type: 'CHANGE',
