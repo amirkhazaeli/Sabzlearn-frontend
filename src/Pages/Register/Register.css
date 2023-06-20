@@ -49,9 +49,14 @@
     width: 100%;
     border-radius: .5rem;
     padding: 1rem .5rem;
-    background-color: var(--green-color);
     color: white;
     border: none;
+}
+.register-box-form button.succes{
+    background-color: var(--green-color);
+}
+.register-box-form button.error{
+    background-color:red;
 }
 .register-input{
     padding: .5rem 1.5rem;

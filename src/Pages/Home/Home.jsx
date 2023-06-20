@@ -6,9 +6,6 @@ import courses from '../../Assets/Data/courses'
 export default function Home() {
   const [courseData, setCourseData] = useState(courses);
 
-  console.log(courseData);
-
-
   const handleSearch = (event) => {
     const searchValue = event.target.value;
     const filtered = courses.filter((course) => {

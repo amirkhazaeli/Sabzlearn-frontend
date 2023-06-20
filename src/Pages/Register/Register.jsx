@@ -72,7 +72,10 @@ export default function Regeister() {
                 }
                 onInputHandler={onInputHandler}
                 />
-              <button>عضویت</button>
+              <button
+              disabled={!formState.isFormValid}
+              className={formState.isFormValid ? 'succes' : 'error'}
+              >عضویت</button>
             </div>
             <div className='register-box-footer'>
 

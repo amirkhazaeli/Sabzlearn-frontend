@@ -53,6 +53,12 @@
     color: white;
     border: none;
 }
+.login-box-form button.succes{
+    background-color: var(--green-color);
+}
+.login-box-form button.error{
+    background-color:red;
+}
 .login-input{
     padding: .5rem 1.5rem;
     border-radius: .5rem ;
