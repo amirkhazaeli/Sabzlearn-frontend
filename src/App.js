@@ -1,5 +1,5 @@
 import { useRoutes } from "react-router-dom";
-import Footer from "./Components/Footer/Footer";
+import Footer from "./Layout/Footer/Footer";
 import { Routes } from "./Router";
 function App() {
   let router = useRoutes(Routes)

@@ -1,13 +1,18 @@
-.search-box {
+.search-Box{
+    background-image: url('../../Assets/images/background.jpg');
+    background-size: cover;
+    padding-bottom: 4rem;
+    opacity: 0.7; 
+}
+.search-box-container{
     text-align: center;
     margin-top: 5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
-  
 }
 
-.search-box h1 {
+.search-box-container h1 {
     font-size: 1.5rem;
 }
 

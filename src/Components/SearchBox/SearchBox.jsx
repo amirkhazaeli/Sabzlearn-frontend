@@ -11,7 +11,7 @@ export default function SearchBox() {
       <div className="search-Box">
         <TopHeader />
         <NavbarComponent />
-        <Container className='search-box' fluid='lg'>
+        <Container className='search-box-container' fluid='lg'>
           <h1>به آکادمی سبزلرن خوش آمدید</h1>
           <div className='search-box-input'>
             <input type="text" placeholder='جستجو..' />
