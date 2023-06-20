@@ -26,7 +26,7 @@
 .navbar-right ul li {
     display: flex;
     align-items: center;
-    column-gap: .4rem;
+    column-gap: .5rem;
     position: relative;
 }
 
@@ -95,6 +95,7 @@
     border-radius: 1rem;
     padding: 1rem;
     transition: all .3s;
+    width: 200px;
 }
 .sub-menu.active{
     opacity: 1;
@@ -107,8 +108,15 @@
     row-gap: 1rem;
     
 }
-.sub-menu ul li:hover{
-   color: var(--green-color);
+.sub-menu ul li{
+    padding: .5rem;
+}
+.sub-menu ul li a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+.sub-menu ul li a:hover{
+   color: var(--green-color) !important;
 }
 /* responsive */
 .navbar-responsive {

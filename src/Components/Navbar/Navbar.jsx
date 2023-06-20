@@ -5,18 +5,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faBars, faUser, faBasketShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
+import menuList from '../../Assets/Data/menuList'
+import { Link } from 'react-router-dom';
 export default function NavbarComponent() {
-  const [showMenu, setShowMenu] = useState(false)
-  const [showResponsiveSidebar,setShowResponsiveSidebar] = useState(false)
+  const [selectedMenuIndex, setSelectedMenuIndex] = useState(null);
+  const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false)
 
-  function handleMouseOver() {
-    setShowMenu(true);
+  function handleMouseOver(index) {
+    setSelectedMenuIndex(index);
   }
 
   function handleMouseLeave() {
-    setShowMenu(false);
+    setSelectedMenuIndex(null);
   }
-  function handleShowSidebar(){
+  function handleShowSidebar() {
     setShowResponsiveSidebar(!showResponsiveSidebar)
   }
   return (
@@ -26,39 +28,42 @@ export default function NavbarComponent() {
           <div className='navbar-right'>
             <img src={logo} alt="" />
             <ul>
-              <li onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} >
-                فرانت اند
-                <FontAwesomeIcon icon={faCaretDown} />
+              {
+                menuList.map((menu, index) => (
+                  <li key={menu.id} onMouseOver={() => handleMouseOver(index)}
+                    onMouseLeave={handleMouseLeave} >
+                    {menu.menuName}
+                    {
+                      menu.subMenus.length ? (
+                        <>
+                          <FontAwesomeIcon icon={faCaretDown} />
+                          <div className={`sub-menu ${selectedMenuIndex === index ? 'active' : ''}`}>
+                            <ul>
+                              {menu.subMenus.map((subMenu) => (
+                                <li key={subMenu.id}>
+                                  <Link to={subMenu.href}>
+                                    {subMenu.courseName}
+                                  </Link>
 
-                <div className={`sub-menu ${showMenu && 'active'}`}>
-                  <ul>
-                    <li>html</li>
-                    <li>js</li>
-                    <li>front</li>
-                    <li>react</li>
-                  </ul>
-                </div>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </>
 
 
-              </li>
-              <li>
-                امنیت
-                <FontAwesomeIcon icon={faCaretDown} />
+                      ) : null
+                    }
 
-              </li>
-              <li>
-                پایتون
-                <FontAwesomeIcon icon={faCaretDown} />
-              </li>
-              <li>
-                مهارت های نرم
-              </li>
-              <li>
-                مقالات
-                <FontAwesomeIcon icon={faCaretDown} />
-              </li>
+
+
+                  </li>
+                ))
+              }
             </ul>
           </div>
+
+
           <div className='navbar-left'>
             <div className='navbar-input'>
               <input type="text" placeholder='جستجو...' />
@@ -77,13 +82,13 @@ export default function NavbarComponent() {
       <Container fluid>
         <div className='navbar-responsive'>
           <div className='navbar-menu-icon'>
-            <FontAwesomeIcon icon={faBars} onClick={handleShowSidebar}/>
+            <FontAwesomeIcon icon={faBars} onClick={handleShowSidebar} />
             <div className={`sidebar ${showResponsiveSidebar && 'active'}`} >
-               <div>
+              <div>
                 <div className='sidebar-close-icon'>
-                  
+
                 </div>
-                <input type="" name="" value=""/>
+                <input type="" name="" value="" />
                 <ul>
                   <li>فرانت اند</li>
                   <li>امنیت</li>
@@ -91,7 +96,7 @@ export default function NavbarComponent() {
                   <li>مهارت های نرم</li>
                   <li>مقالات</li>
                 </ul>
-               </div>
+              </div>
             </div>
           </div>
           <div className='navbar-responsive-logo'>
