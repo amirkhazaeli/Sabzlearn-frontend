@@ -2,8 +2,9 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ProductItem from '../ProductItem/ProductItem'
 import './ProductComponent.css'
-import courses from '../../Assets/Data/courses'
-export default function ProductComponent() {
+import { Link } from 'react-router-dom'
+export default function ProductComponent({courses}) {
+  
   return (
     <div className='product-section' >
       <Container fluid='lg'>
@@ -12,7 +13,9 @@ export default function ProductComponent() {
           {
             courses.map((course) => (
               <Col xs={6} md={4} lg={3}>
-                <ProductItem data={course} />
+                <Link to={`/productInfo/${course.id}`}>
+                  <ProductItem data={course} />
+                </Link>
               </Col>
             ))
           }

@@ -4,6 +4,7 @@
     overflow: hidden;
     margin-top: 2rem;
     position: relative;
+    text-decoration: none;
 }
 .product-item img{
     width: 100%;

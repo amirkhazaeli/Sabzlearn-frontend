@@ -2,6 +2,7 @@ const menuList = [
     {
         id: 1,
         menuName: 'فرانت اند',
+        href: '/category',
         subMenus: [
             {
                 courseName: 'آموزش HTML',
@@ -24,6 +25,7 @@ const menuList = [
     {
         id: 2,
         menuName: 'امنیت',
+        href: '/category',
         subMenus: [
             {
                 courseName: 'آموزش HTML',
@@ -46,6 +48,7 @@ const menuList = [
     {
         id: 3,
         menuName: 'پایتون',
+        href: '/category',
         subMenus: [
             {
                 courseName: 'آموزش HTML',
@@ -68,11 +71,13 @@ const menuList = [
     {
         id: 4,
         menuName: 'مهارت نرم',
+        href: '/category',
         subMenus: []
     },
     {
         id: 5,
         menuName: 'مقالات',
+        href: '/category',
         subMenus: [
             {
                 courseName: 'آموزش HTML',

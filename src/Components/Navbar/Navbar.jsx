@@ -26,13 +26,19 @@ export default function NavbarComponent() {
       <Container fluid="lg">
         <div className='navbar-wrapper'>
           <div className='navbar-right'>
-            <img src={logo} alt="" />
+            <Link to='/'>
+              <img src={logo} alt="" />
+            </Link>
+
             <ul>
               {
                 menuList.map((menu, index) => (
                   <li key={menu.id} onMouseOver={() => handleMouseOver(index)}
                     onMouseLeave={handleMouseLeave} >
-                    {menu.menuName}
+                    <Link to={menu.href}>
+                      {menu.menuName}
+                    </Link>
+
                     {
                       menu.subMenus.length ? (
                         <>
@@ -68,8 +74,11 @@ export default function NavbarComponent() {
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </div>
             <button>
-              امیر محمد عرب خزایلی
-              <FontAwesomeIcon icon={faUser} />
+              <Link to='/login'>
+                ورود / عضویت
+                <FontAwesomeIcon icon={faUser} />
+              </Link>
+
             </button>
             <FontAwesomeIcon icon={faBasketShopping} />
           </div>

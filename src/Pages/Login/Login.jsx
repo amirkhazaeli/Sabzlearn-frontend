@@ -5,6 +5,7 @@ import Header from '../../Layout/Header/Header'
 import './Login.css'
 import { requiredValueValidator, minValueValidator, maxValueValidator } from '../../Validator/Rules'
 import {useForm} from '../../Hooks/useForm'
+import { Link } from 'react-router-dom'
 export default function Login() {
   const [formState,onInputHandler] = useForm({
     userName:{
@@ -28,7 +29,11 @@ console.log(formState);
             <h3>خوشحالیم دوباره میبینیمت (:</h3>
             <div>
               <span>کاربر جدید هستید؟</span>
-              <button>ثبت نام</button>
+              <button> 
+                <Link to='/register'>
+                ثبت نام
+                </Link>
+              </button>
             </div>
           </div>
           <div className='login-box-form'>

@@ -28,8 +28,8 @@
     align-items: center;
     column-gap: .5rem;
     position: relative;
+   
 }
-
 .navbar-right ul li:hover {
     cursor: pointer;
 }
@@ -53,14 +53,14 @@
 
 .navbar-input input {
     border-radius: 1rem;
-    background-color: #56545F;
+    opacity: .4;
     height: 30px;
-    width: 150px;
+    width: 200px;
     padding: 1.2rem .5rem;
     font-family: var(--font-family);
     border: none;
+    outline: none;
 }
-
 .navbar-input{
     position: relative;
     display: flex;
@@ -70,7 +70,7 @@
     position: absolute;
     left: .5rem;
 }
-.navbar-left button {
+.navbar-left button a{
     display: flex;
     align-items: center;
     column-gap: 1rem;
@@ -110,10 +110,6 @@
 }
 .sub-menu ul li{
     padding: .5rem;
-}
-.sub-menu ul li a{
-    text-decoration: none;
-    color: var(--white-color);
 }
 .sub-menu ul li a:hover{
    color: var(--green-color) !important;

@@ -1,5 +1,6 @@
 const courses = [
     {
+        id: 1,
         title: 'آموزش git و github',
         category: 'فرانت اند',
         price: 510000,
@@ -22,6 +23,7 @@ const courses = [
         ]
     },
     {
+        id: 2,
         title: 'آموزش حرفه ای NodeJS ',
         category: 'اموزش بک اند',
         price: 4350000 ,
@@ -44,6 +46,7 @@ const courses = [
         ]
     },
     {
+        id: 3,
         title: 'آموزش پایتون رایگان',
         category: 'پایتون',
         price: 4350000 ,
@@ -66,6 +69,7 @@ const courses = [
         ]
     },
     {
+        id: 3,
         title: 'آموزش ری اکت ( ReactJS )',
         category: 'فرانت اند,',
         price: 550000 ,
@@ -88,6 +92,7 @@ const courses = [
         ]
     },
     {
+        id: 4,
         title: 'آموزش ری اکت ( ReactJS )',
         category: 'فرانت اند,',
         price: 550000 ,
@@ -110,6 +115,7 @@ const courses = [
         ]
     },
     {
+        id: 5,
         title: 'آموزش ری اکت ( ReactJS )',
         category: 'فرانت اند,',
         price: 550000 ,
@@ -132,6 +138,7 @@ const courses = [
         ]
     },
     {
+        id: 6,
         title: 'آموزش ری اکت ( ReactJS )',
         category: 'فرانت اند,',
         price: 550000 ,
@@ -154,6 +161,7 @@ const courses = [
         ]
     },
     {
+        id: 7,
         title: 'آموزش ری اکت ( ReactJS )',
         category: 'فرانت اند,',
         price: 550000 ,

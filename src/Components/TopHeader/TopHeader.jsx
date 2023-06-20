@@ -4,6 +4,7 @@ import { faTelegram, faInstagram, faTwitter } from "@fortawesome/free-brands-svg
 import { faCommentsDollar } from "@fortawesome/free-solid-svg-icons";
 import './TopHeader.css'
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 export default function TopHeader() {
     return (
         <div className='top-header'>
@@ -15,7 +16,11 @@ export default function TopHeader() {
                             <FontAwesomeIcon icon={faCommentsDollar} />
                             همکاری با سبزلرن
                         </li>
-                        <li>همه دوره ها</li>
+                        <li>
+                            <Link to='/'>
+                            همه دوره ها
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <div className='top-header-left'>

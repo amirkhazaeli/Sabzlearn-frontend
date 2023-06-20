@@ -5,6 +5,7 @@ import Header from '../../Layout/Header/Header'
 import './Register.css'
 import { requiredValueValidator, minValueValidator, maxValueValidator, emailValueValidator } from '../../Validator/Rules';
 import {useForm} from '../../Hooks/useForm'
+import { Link } from 'react-router-dom'
 export default function Regeister() {
   const [formState, onInputHandler] = useForm({
     userName: {
@@ -32,7 +33,11 @@ export default function Regeister() {
               <h3>خوشحالیم به جمع ما میپیوندی </h3>
               <div>
                 <span>قبلا ثبت نام کرده اید؟</span>
-                <button>وارد شوید</button>
+                <button> 
+                <Link to='/login'>
+                 وارد شوید
+                </Link>
+              </button>
               </div>
             </div>
             <div className='register-box-form'>
