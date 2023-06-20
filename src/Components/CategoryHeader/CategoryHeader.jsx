@@ -1,7 +1,7 @@
 import React from 'react';
 import './CategoryHeader.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {  faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row } from 'react-bootstrap';
 
 export default function CategoryHeader() {

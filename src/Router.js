@@ -11,7 +11,7 @@ export const Routes = [
         path:'/category' , element: <Category />
     },
     {
-        path:'/productInfo' , element: <ProductInfo />
+        path:'/productInfo/:id' , element: <ProductInfo />
     },
     {
         path:'/login' , element: <Login />

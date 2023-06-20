@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ArticleSliderItem from '../ArticleSliderItem/ArticleSliderItem'
 // import css file
@@ -28,10 +28,6 @@ export default function ArticleSlider() {
                             <ArticleSliderItem />
                         </Col>
                     </Row>
-
-
-
-
                 </div>
             </Container>
 

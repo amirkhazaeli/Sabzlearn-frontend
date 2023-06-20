@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
 import './Login.css'
-import { requiredValueValidator, minValueValidator, maxValueValidator, emailValueValidator } from '../../Validator/Rules'
+import { requiredValueValidator, minValueValidator, maxValueValidator } from '../../Validator/Rules'
 import {useForm} from '../../Hooks/useForm'
 export default function Login() {
   const [formState,onInputHandler] = useForm({
