@@ -47,8 +47,8 @@ const menuList = [
     },
     {
         id: 3,
-        menuName: 'پایتون',
-        href: '/category/python',
+        menuName: 'بک اند',
+        href: '/category/backend',
         subMenus: [
             {
                 courseName: 'آموزش HTML',
@@ -77,25 +77,8 @@ const menuList = [
     {
         id: 5,
         menuName: 'مقالات',
-        href: '/category/مقالات',
-        subMenus: [
-            {
-                courseName: 'آموزش HTML',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش Css',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش جاوااسکریپت',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش ری اکت',
-                href: '/productInfo/2',
-            },
-        ]
+        href: '/article',
+        subMenus: []
     },
 
 ]

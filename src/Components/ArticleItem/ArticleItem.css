@@ -1,0 +1,26 @@
+.Article-Item{
+    background-color: var(--secondary-color);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+.article-item-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Article-Item img{
+    width: 100%;
+    object-fit: cover;
+}
+.Article-Item-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    line-height: 1.5rem;
+}
+.Article-Item-left h1{
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: .5rem;
+}

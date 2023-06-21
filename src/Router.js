@@ -3,6 +3,7 @@ import Category from "./Pages/Category/Category";
 import Home from "./Pages/Home/Home";
 import ProductInfo from "./Pages/ProductInfo/ProductInfo";
 import Regeister from "./Pages/Register/Register";
+import Article from "./Pages/Article/Article";
 export const Routes = [
     {
         path:'/' , element: <Home />
@@ -19,5 +20,9 @@ export const Routes = [
     {
         path:'/register' , element: <Regeister />
     },
+    {
+        path:'/article' , element: <Article />
+    }
+
 
 ]

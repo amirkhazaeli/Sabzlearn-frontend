@@ -18,7 +18,7 @@ export default function Category() {
          return course.category == 'فرانت اند'
       }else if(param.categoryName == 'security'){
         return course.category == 'امنیت'
-      }else if(param.categoryName == 'python'){
+      }else if(param.categoryName == 'backend'){
         return course.category == 'بک اند'
       }
     })

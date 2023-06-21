@@ -1,8 +1,16 @@
 import { React } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ArticleSliderItem from '../ArticleSliderItem/ArticleSliderItem'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination, Navigation,Autoplay } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
 // import css file
 import './ArticleSlider.css'
+// import data
+import articles from '../../Assets/Data/article'
 export default function ArticleSlider() {
     return (
         <div className='article-slider-section'>
@@ -17,17 +25,36 @@ export default function ArticleSlider() {
                     </div>
                 </div>
                 <div className='article-slider'>
-                    <Row>
-                        <Col xs={6} md={4} lg={3}>
-                            <ArticleSliderItem />
-                        </Col>
-                        <Col xs={6} md={4} lg={3}>
-                            <ArticleSliderItem />
-                        </Col>
-                        <Col xs={6} md={4} lg={3}>
-                            <ArticleSliderItem />
-                        </Col>
-                    </Row>
+
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        freeMode={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[FreeMode, Pagination,Navigation,Autoplay]}
+                        navigation={true}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                          }}
+                        className="mySwiper"
+                    >
+                        {
+                            articles.map((article) => (
+                                <SwiperSlide>
+
+                                    <ArticleSliderItem article={article} />
+
+                                </SwiperSlide>
+                            ))
+                        }
+
+                    </Swiper>
+
+
+
                 </div>
             </Container>
 

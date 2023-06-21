@@ -1,0 +1,16 @@
+.Article-SideBar-Item{
+    margin-bottom: 1rem;
+}
+.Article-SideBar-Item-row{
+    display: flex;
+    align-items: center;
+}
+.Article-SideBar-Item-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.Article-SideBar-Item-left h1{
+    font-weight: 600;
+    line-height: 1.5rem;
+}
