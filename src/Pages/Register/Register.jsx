@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
@@ -6,6 +6,7 @@ import './Register.css'
 import { requiredValueValidator, minValueValidator, maxValueValidator, emailValueValidator } from '../../Validator/Rules';
 import {useForm} from '../../Hooks/useForm'
 import { Link } from 'react-router-dom'
+import ReCAPTCHA from 'react-google-recaptcha'
 export default function Regeister() {
   const [formState, onInputHandler] = useForm({
     userName: {
@@ -21,7 +22,10 @@ export default function Regeister() {
       isValid: false
     },
   }, false)
-  console.log(formState);
+  const [isGoogleRecaptchaVerify,setIsGoogleRecaptchaVerify] = useState(false)
+  const onChangeHandler = () => {
+    setIsGoogleRecaptchaVerify(true)
+  }
   return (
     <>
       <Header />
@@ -72,9 +76,10 @@ export default function Regeister() {
                 }
                 onInputHandler={onInputHandler}
                 />
+                <ReCAPTCHA sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' onChange={onChangeHandler}/>
               <button
-              disabled={!formState.isFormValid}
-              className={formState.isFormValid ? 'succes' : 'error'}
+              disabled={(!formState.isFormValid || isGoogleRecaptchaVerify)}
+              className={(formState.isFormValid && isGoogleRecaptchaVerify )? 'succes' : 'error'}
               >عضویت</button>
             </div>
             <div className='register-box-footer'>
