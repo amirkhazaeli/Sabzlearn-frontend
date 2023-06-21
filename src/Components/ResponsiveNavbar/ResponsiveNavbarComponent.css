@@ -1,0 +1,53 @@
+.navbar-responsive {
+    display: none;
+    padding: 1rem;
+}
+.navbar-responsive div{
+    flex: 1;
+}
+.navbar-responsive .navbar-responsive-logo{
+    text-align: center;
+}
+.navbar-responsive img{
+    width: 50px;
+   
+}
+.navbar-responsive svg {
+    font-size: 1rem;
+    color: var(--white-color);
+}
+
+.navbar-responsive .icons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 1rem;
+}
+.navbar-responsive .icons button{
+    padding: .4rem;
+}
+.sidebar{
+    background-color: white;
+    color: #56545F;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100vh;
+    transform: translateX(250px);
+    transition: all .5s;
+}
+.sidebar.active{
+    transform: translateX(0px);
+  
+}
+@media screen and (max-width: 1000px) {
+    .navbar-wrapper {
+        display: none;
+    }
+
+    .navbar-responsive {
+        display: flex;
+        align-items: center;
+    }
+}

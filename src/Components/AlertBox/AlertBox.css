@@ -1,9 +1,9 @@
 .Alret-empty{
-    background-color: rgb(95, 94, 94);
+    background-color: unset;
     padding: 3rem;
     border-radius: 1rem;
    text-align: center;
-
+   border: .2px solid rgb(255, 255, 255,.4);
 }
 .Alret-empty h1{
     font-size: 2rem;
