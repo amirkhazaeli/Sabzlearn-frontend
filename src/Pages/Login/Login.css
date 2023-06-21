@@ -33,8 +33,9 @@
 }
 .login-box-header div button{
     padding: .5rem;
-    background-color: rgb(184, 182, 182);
-    border: none;
+    background-color: unset;
+    border: 1px solid white;
+    color: white;
     border-radius: .2rem;
 }
 .login-box-form{
@@ -60,14 +61,25 @@
     background-color:red;
 }
 .login-input{
-    padding: .5rem 1.5rem;
+    padding: .8rem 1.5rem;
     border-radius: .5rem ;
     border: none;
     outline: none;
+    background-color: unset;
+    color: white;
+    width: 300px;
+}
+.login-input::placeholder{
+    color: white;
 }
 .login-input.valid{
     border: 5px solid var(--green-color) !important;
 }
 .login-input.notValid{
     border: 2px solid red!important;
+}
+@media screen and (max-width: 432px) {
+    .login-input{
+        width: 100%;
+    }
 }

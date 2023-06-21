@@ -36,8 +36,10 @@ export default function NavbarComponent() {
                   <li key={menu.id} onMouseOver={() => handleMouseOver(index)}
                     onMouseLeave={handleMouseLeave} >
                     <Link to={menu.href}>
-                      {menu.menuName}
+                    {menu.menuName}
                     </Link>
+                   
+                
 
                     {
                       menu.subMenus.length ? (
@@ -81,6 +83,9 @@ export default function NavbarComponent() {
 
             </button>
             <FontAwesomeIcon icon={faBasketShopping} />
+            <div className='cart'>
+              
+            </div>
           </div>
         </div>
       </Container>

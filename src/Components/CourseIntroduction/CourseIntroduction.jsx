@@ -1,20 +1,22 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import poster from '../../Assets/images/productImage.png';
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-export default function CourseIntroduction() {
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import formatNumber from '../../Assets/Utils/formatNumber'
+export default function CourseIntroduction({courseData}) {
+    console.log(courseData);
     return (
         <div className='course-introduction'>
-            <h1 className='course-introduction-title'>بررسی تخصصی سوالات مصاحبه‌ای JS
+            <h1 className='course-introduction-title'> 
+            {courseData.title} 
             </h1>
             <Row>
                 <Col md={7}>
                     <div className='course-introduction-video'>
                         <video
                             src=''
-                            poster={poster}
+                            poster={courseData.image}
                             controls />
                         <div className='course-point'>
                             پس از خرید، بلافاصله به محتوای دوره دسترسی خواهید داشت و میتوانید دوره را مشاهده و یا دانلود کنید.
@@ -28,9 +30,7 @@ export default function CourseIntroduction() {
                          <Row>
                             <Col lg={8}>
                             <div className='course-tags'> 
-                                <span>آموزش برنامه نویسی فرانت اند</span>
-                                <span>کسب درامد از برنامه نویسی فرانت اند</span>
-                                <span>مهارت نرم برنامه نویسی فرانت اند</span>
+                                <span>{courseData.category}</span>
                             </div>
                             </Col>
                             <Col lg={4}>
@@ -39,7 +39,7 @@ export default function CourseIntroduction() {
                             </Col>
                          </Row>
                          <div className='course-introduction-price'>
-                            <h1>675,000 تومان</h1>
+                            <h1>{formatNumber(courseData.price)}</h1>
                          </div>
                          <div className='Course-feature'>
                             <span>  پــروژه مــحور بودن دوره هــــا</span>
@@ -61,25 +61,25 @@ export default function CourseIntroduction() {
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
                     <FontAwesomeIcon icon={faUser} />
-                       <span>مدرس : محمد امین سعیدی راد</span>
+                       <span>مدرس : {courseData.teacherName}   </span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
                     <FontAwesomeIcon icon={faUser} />
-                       <span>مدرس : محمد امین سعیدی راد</span>
+                       <span>وضعیت : {courseData.status}</span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
                     <FontAwesomeIcon icon={faUser} />
-                       <span>مدرس : محمد امین سعیدی راد</span>
+                       <span>تایم درس : {courseData.courseTime}</span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
                     <FontAwesomeIcon icon={faUser} />
-                       <span>مدرس : محمد امین سعیدی راد</span>
+                       <span>داشنجو : {courseData.student} </span>
                     </div>
                 </Col>
 
@@ -87,7 +87,7 @@ export default function CourseIntroduction() {
             <Row>
                 <div className='course-introduction-desc'>
                     <p>
-                        تو این دوره انواع مصاحبه، سوالات پرتکرار هر نوع مصاحبه، نحوه آماده شدن برای مصاحبه و … برای شما عزیزان آموزش داده میشه تا بعد از گذروندن این دوره کاملا آماده هر نوع مصاحبه در زمینه جاوا اسکریپت باشین و هیچ نوع استرسی برای حاضر شدن در جلسه مصاحبه نداشته باشین.
+                      {courseData.desc}
                     </p>
                 </div>
             </Row>

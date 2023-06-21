@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ProductItem from '../ProductItem/ProductItem'
 import './ProductComponent.css'
-import { Link } from 'react-router-dom'
-export default function ProductComponent({courses}) {
+import { Link, useLocation, useParams } from 'react-router-dom'
+import AlertBox from '../AlertBox/AlertBox'
+export default function ProductComponent({ courses }) {
+  const [showBtn,setShowBtn] = useState(true)
+  const location = useLocation()
+  useEffect(()=>{
+    if(location.pathname == '/'){
+      setShowBtn(false)
+    }
+  },[])
   
   return (
     <div className='product-section' >
@@ -11,13 +19,18 @@ export default function ProductComponent({courses}) {
 
         <Row className='className="d-flex flex-wrap align-items-stretch"'>
           {
-            courses.map((course) => (
-              <Col xs={6} md={4} lg={3}>
-                <Link to={`/productInfo/${course.id}`}>
-                  <ProductItem data={course} />
-                </Link>
-              </Col>
-            ))
+            courses.length ? (
+              courses.map((course) => (
+                <Col xs={6} md={4} lg={3}>
+                  <Link to={`/productInfo/${course.id}`}>
+                    <ProductItem data={course} />
+                  </Link>
+                </Col>
+              ))
+            ) : (
+              <AlertBox title='دوره ای وجود ندارد'  showBtn={showBtn}/>
+            )
+
           }
 
         </Row>

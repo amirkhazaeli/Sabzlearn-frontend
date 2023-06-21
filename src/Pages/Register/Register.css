@@ -32,9 +32,10 @@
     column-gap: .5rem;
 }
 .register-box-header div button{
-    padding: .3rem;
-    background-color: rgb(184, 182, 182);
-    border: none;
+    padding: .5rem;
+    background-color: unset;
+    border: 1px solid white;
+    color: white;
     border-radius: .2rem;
 }
 .register-box-form{
@@ -59,14 +60,26 @@
     background-color:red;
 }
 .register-input{
-    padding: .5rem 1.5rem;
+    padding: .8rem 1.5rem;
     border-radius: .5rem ;
     border: none;
     outline: none;
+    background-color: unset;
+    color: white;
+    width: 300px;
+}
+.register-input::placeholder{
+    color: white;
 }
 .register-input.valid{
-    border: 5px solid var(--green-color) !important;
+    border: 2px solid var(--green-color) !important;
 }
 .register-input.notValid{
     border: 2px solid red!important;
+}
+
+@media screen and (max-width: 432px) {
+    .register-input{
+        width: 100%;
+    }
 }

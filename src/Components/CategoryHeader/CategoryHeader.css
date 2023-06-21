@@ -7,34 +7,36 @@
 .category-header-right{
     text-align: center;
 }
-.category-header select,
-option {
-    background-color: rgb(97, 95, 95);
+.category-header select {
+    background-color: unset;
     color: white;
-    padding: .8rem;
+    padding: .8rem 1rem;
     border-radius: 1rem;
-    
+    width: 300px;
+    outline: 1px solid white;
 }
-
+.category-header select option{
+    color: black;
+}
 .category-header-left {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: .5rem;
 }
 
 .category-header-left input {
     padding: .8rem 1rem;
     border-radius: 1rem;
-    background-color: rgb(97, 95, 95);
+    outline: 1px solid white;
+    background-color: unset;
     border: none;
     color: white;
 }
-
-.category-header-left button {
-    padding: .8rem;
-    border-radius: 1rem;
-    background-color: rgb(97, 95, 95);
-    border: none;
+.category-header-left input::placeholder{
+    color: white;
+}
+.category-header-left svg {
+    position: relative;
+    left: 2rem;
     color: white;
 }

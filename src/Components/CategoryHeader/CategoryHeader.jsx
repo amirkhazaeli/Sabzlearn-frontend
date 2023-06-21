@@ -14,16 +14,20 @@ export default function CategoryHeader() {
                             <option value="">
                                 مرتب سازی پیش فرض
                             </option>
+                            <option value="">
+                                گران ترین
+                            </option>
+                            <option value="">
+                                ارزان ترین
+                            </option>
                         </select>
 
                     </div>
                 </Col>
                 <Col md={4}  lg={6}>
                     <div className='category-header-left'>
-                        <input type="text" value='جستجوی دوره...' />
-                        <button className='category-search-btn'>
+                        <input type="text" placeholder='جستجوی دوره...' />
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
                     </div>
                 </Col>
             </Row>

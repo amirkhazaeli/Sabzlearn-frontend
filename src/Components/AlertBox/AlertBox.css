@@ -1,0 +1,19 @@
+.Alret-empty{
+    background-color: rgb(95, 94, 94);
+    padding: 3rem;
+    border-radius: 1rem;
+   text-align: center;
+
+}
+.Alret-empty h1{
+    font-size: 2rem;
+    line-height: 2rem;
+}
+.Alret-empty button{
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--green-color);
+
+}

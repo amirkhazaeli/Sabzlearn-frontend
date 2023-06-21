@@ -8,7 +8,7 @@ export const Routes = [
         path:'/' , element: <Home />
     },
     {
-        path:'/category' , element: <Category />
+        path:'/category/:categoryName' , element: <Category />
     },
     {
         path:'/productInfo/:id' , element: <ProductInfo />
