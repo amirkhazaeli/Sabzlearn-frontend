@@ -15,6 +15,9 @@
     flex-direction: column;
     row-gap: 1rem;
 }
+.cart-item-left h1{
+    line-height: 1.5rem;
+}
 .cart-item-left button{
     background-color: rgb(223, 91, 91);
     color: white;

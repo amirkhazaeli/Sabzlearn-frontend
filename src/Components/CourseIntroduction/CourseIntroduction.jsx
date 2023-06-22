@@ -1,12 +1,36 @@
-import React from 'react'
+import {React , useContext} from 'react'
 import { Col, Row } from 'react-bootstrap'
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../../Assets/Utils/formatNumber';
-import { Link } from 'react-router-dom';
+import CartContext from '../../Context/CartContext';
+import Swal from 'sweetalert';
 export default function CourseIntroduction({ courseData }) {
-    console.log(courseData);
+    const {CartItems,setCartItems} = useContext(CartContext)
+    const addCourseToCartItems = () => {
+        const checkCartItems = CartItems.includes(courseData)
+        if(!checkCartItems){
+            setCartItems([...CartItems,courseData])
+            Swal({
+                title: "محصول با موفقیت اضافه شد",
+                icon: "success",
+                buttons: {
+                  confirm: {
+                    text: "OK",
+                    value: true,
+                    visible: true,
+                    className: "btn btn-primary",
+                    closeModal: true
+                  }
+                }
+              });
+        }else{
+            alert('این محصول قبلا اضافه شده است')
+        }
+    
+    }
+
     return (
         <div className='course-introduction'>
             <h1 className='course-introduction-title'>
@@ -51,8 +75,8 @@ export default function CourseIntroduction({ courseData }) {
                             <button className='course-btn Watch-videos-btn'>
                                 دیدن ویدیوها
                             </button>
-                            <button className='course-btn status-btn'>
-                                شما دانشجوی دوره هستید
+                            <button className='course-btn status-btn' onClick={() => addCourseToCartItems()}>
+                                افزودن به سبد خرید
                             </button>
                         </div>
                     </div>

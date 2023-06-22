@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap'
 import CourseTopicItem from '../CourseTopicItems/CourseTopicItem'
 import './CourseTopic.css'
 export default function CourseTopic({courseData}) {
-    console.log(courseData);
     return (
         <div className='course-topic'>
             <Container fluid='lg'>

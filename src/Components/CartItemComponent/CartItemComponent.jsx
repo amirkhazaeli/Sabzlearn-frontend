@@ -1,24 +1,47 @@
-import {React,useState} from 'react'
-import './CartItem.css'
-import courseImage from '../../Assets/images/courses/image8.png'
+import {React,useState,useContext} from 'react'
+import './CartItemComponent.css'
 import {Col, Row} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-export default function CartItem() {
+import formatNumber from '../../Assets/Utils/formatNumber';
+import CartContext from '../../Context/CartContext';
+import Swal from 'sweetalert';
+export default function CartItemComponent({cartItemData}) {
+  const {CartItems,setCartItems} = useContext(CartContext)
   const [showModal, setShowModal] = useState(false);
 
+  const handleSubmitModal = () => { // Delete item from CartContex
+    let CartItemsFilter = CartItems.filter((CartItem)=>{
+      return CartItem.id !== cartItemData.id
+    })
+    setCartItems(CartItemsFilter)
+    handleCloseModal(false)
+    Swal({
+      title: "محصول از سبد خرید حذف شد",
+      icon: "success",
+      buttons: {
+        confirm: {
+          text: "OK",
+          value: true,
+          visible: true,
+          className: "btn btn-primary",
+          closeModal: true
+        }
+      }
+    });
+  }
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
   return (
     <div className='cart-item'>
       <Row className='cart-item-row'>
         <Col>
-        <img src={courseImage} alt="" />
+        <img src={cartItemData.image} alt="" />
         </Col>
         <Col>
         <div className='cart-item-left'>
-          <h1>نام محصول</h1>
-          <h3>60000 تومان</h3>
+          <h1>{cartItemData.title}</h1>
+          <h3>{formatNumber(cartItemData.price)}</h3>
           <button onClick={handleShowModal} >حذف</button>
         </div>
         </Col>
@@ -33,7 +56,7 @@ export default function CartItem() {
           <Button variant="secondary" onClick={handleCloseModal}>
             خیر
           </Button>
-          <Button variant="primary" onClick={handleCloseModal}>
+          <Button variant="primary" onClick={handleSubmitModal}>
             بله
           </Button>
         </Modal.Footer>

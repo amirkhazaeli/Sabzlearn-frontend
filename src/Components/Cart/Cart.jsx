@@ -1,19 +1,30 @@
-import React from 'react'
-import CartItem from '../CartItem/CartItem'
+import React, { useContext } from 'react'
+import CartItemComponent from '../CartItemComponent/CartItemComponent'
 import './Cart.css'
-export default function Cart({isActiveCart}) {
+import CartContext from '../../Context/CartContext'
+export default function Cart({ isActiveCart }) {
+    const { CartItems, setCartItems } = useContext(CartContext)
+
     return (
         <div className={`navbar-cart ${isActiveCart ? 'active' : ''}`}>
             <div className='navbar-cart-header'>
-                <h1 className='navbar-cart-title'>4 محصول در سبد </h1>
+                <h1 className='navbar-cart-title'>{CartItems.length} محصول در سبد </h1>
                 <button>تکمیل خرید</button>
             </div>
 
             <div className='cart-items'>
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
+                {CartItems.length ? (
+                    CartItems.map((cartItemData) => (
+                        <CartItemComponent cartItemData={cartItemData} setCartItems={setCartItems} CartItems={CartItems} />
+                    )
+                    )
+                ) : (
+                    <div className='cart-empty'>
+                        محصولی در سبد ندارید
+                    </div>
+                )
+
+                }
             </div>
         </div>
     )

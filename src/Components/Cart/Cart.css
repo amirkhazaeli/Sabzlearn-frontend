@@ -32,3 +32,10 @@
 .navbar-cart .navbar-cart-header button {
     color: white;
 }
+.cart-empty{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
