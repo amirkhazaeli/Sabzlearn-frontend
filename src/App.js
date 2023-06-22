@@ -21,7 +21,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(CartItems));
   }, [CartItems]);
- console.log(CartItems , localStorage);
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

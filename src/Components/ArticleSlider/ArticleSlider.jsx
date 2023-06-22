@@ -2,7 +2,7 @@ import { React } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ArticleSliderItem from '../ArticleSliderItem/ArticleSliderItem'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination, Navigation,Autoplay } from "swiper";
+import { FreeMode, Pagination, Navigation, Autoplay } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import './ArticleSlider.css'
 // import data
 import articles from '../../Assets/Data/article'
+import { Link } from 'react-router-dom';
 export default function ArticleSlider() {
     return (
         <div className='article-slider-section'>
@@ -33,20 +34,20 @@ export default function ArticleSlider() {
                         pagination={{
                             clickable: true,
                         }}
-                        modules={[FreeMode, Pagination,Navigation,Autoplay]}
+                        modules={[FreeMode, Pagination, Navigation, Autoplay]}
                         navigation={true}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
-                          }}
+                        }}
                         className="mySwiper"
                     >
                         {
                             articles.map((article) => (
                                 <SwiperSlide>
-
-                                    <ArticleSliderItem article={article} />
-
+                                    <Link to='/article'>
+                                        <ArticleSliderItem article={article} />
+                                    </Link>
                                 </SwiperSlide>
                             ))
                         }

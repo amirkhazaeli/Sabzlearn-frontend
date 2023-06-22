@@ -1,4 +1,4 @@
-import {React , useContext} from 'react'
+import {React , useContext, useEffect} from 'react'
 import { Col, Row } from 'react-bootstrap'
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -30,7 +30,10 @@ export default function CourseIntroduction({ courseData }) {
         }
     
     }
-
+    const handleScrollToCourseVideo = () => {
+        window.scrollTo(0, 1243);
+    }
+ 
     return (
         <div className='course-introduction'>
             <h1 className='course-introduction-title'>
@@ -72,7 +75,7 @@ export default function CourseIntroduction({ courseData }) {
                             <span>تضمین کیــفیت کلیـه محصولات</span>
                         </div>
                         <div className='course-introduction-btns'>
-                            <button className='course-btn Watch-videos-btn'>
+                            <button className='course-btn Watch-videos-btn' onClick={handleScrollToCourseVideo}>
                                 دیدن ویدیوها
                             </button>
                             <button className='course-btn status-btn' onClick={() => addCourseToCartItems()}>
