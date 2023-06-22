@@ -12,7 +12,6 @@ export default function usePagination(data, pagesSize = 8) {
 
     const currentPageHandler = useCallback((pageNumber) => {
         setCurrentPage(pageNumber)
-        console.log(pageNumber);
     }, [])
 
     return [showData, currentPageHandler]

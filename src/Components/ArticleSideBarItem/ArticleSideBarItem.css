@@ -3,14 +3,16 @@
 }
 .Article-SideBar-Item-row{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    
 }
 .Article-SideBar-Item-left{
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    
 }
 .Article-SideBar-Item-left h1{
     font-weight: 600;
     line-height: 1.5rem;
+    padding-bottom: 1rem;
 }

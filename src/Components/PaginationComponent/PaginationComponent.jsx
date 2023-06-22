@@ -2,15 +2,13 @@ import { React, useState } from 'react'
 import './PaginationComponent.css'
 
 import Pagination from 'react-bootstrap/Pagination';
-export default function PaginationComponent({ data, currentPageHandler }) {
+export default function PaginationComponent({ data, currentPageHandler, pageSize  }) {
   const [selectPage, setSelectPage] = useState(null)
 
-  const pagesNumber = Array.from({ length: Math.ceil(data.length / 8) }, (_, index) => index + 1);
+  const pagesNumber = Array.from({ length: Math.ceil(data.length / pageSize) }, (_, index) => index + 1);
 
-  const scrollToTop = () => {
-    window.scrollTo(0, 150)
-  }
-  console.log(pagesNumber);
+  
+
   return (
     <>
       {
@@ -23,7 +21,6 @@ export default function PaginationComponent({ data, currentPageHandler }) {
                 <Pagination.Item className='pagination-item' active={selectPage === index} onClick={() => {
                   setSelectPage(index)
                   currentPageHandler(number)
-                  scrollToTop()
                 }}>{number}
                 </Pagination.Item>
               )

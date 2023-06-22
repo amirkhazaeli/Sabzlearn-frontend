@@ -35,6 +35,20 @@ const articles = [
         image: require('../../Assets/images/article/image5.jpg'),
         comment: 32
     },
+    {
+        id:6,
+        title: 'سریع ترین و بهترین راه یادگیری جاوا اسکریپت چیست؟',
+        desc: 'به طور کلی بهترین راه آموزش جاوا اسکریپت چیست ؟  یادگیری هر زبان برنامه نویسی مراحل و چارچوب های خاص خود را دارد ',
+        image: require('../../Assets/images/article/image5.jpg'),
+        comment: 32
+    },
+    {
+        id:7,
+        title: 'سریع ترین و بهترین راه یادگیری جاوا اسکریپت چیست؟',
+        desc: 'به طور کلی بهترین راه آموزش جاوا اسکریپت چیست ؟  یادگیری هر زبان برنامه نویسی مراحل و چارچوب های خاص خود را دارد ',
+        image: require('../../Assets/images/article/image5.jpg'),
+        comment: 32
+    },
 ]
 
 export default articles

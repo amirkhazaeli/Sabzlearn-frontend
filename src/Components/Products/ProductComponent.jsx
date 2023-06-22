@@ -37,7 +37,7 @@ export default function ProductComponent({ courses }) {
 
         </Row>
 
-        <PaginationComponent data={courses} currentPageHandler={currentPageHandler} />
+        <PaginationComponent data={courses} currentPageHandler={currentPageHandler} pageSize={8}/>
 
 
 
