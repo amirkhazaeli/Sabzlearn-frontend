@@ -10,10 +10,10 @@ export default function Article() {
             <Header />
             <Container fluid='lg' style={{marginTop: '2rem'}}>
                 <Row>
-                    <Col lg={9}>
+                    <Col lg={8}>
                         <ArticlesComponent />
                     </Col>
-                    <Col lg={3}>
+                    <Col lg={4}>
                         <ArticleSideBar />
                     </Col>
                 </Row>

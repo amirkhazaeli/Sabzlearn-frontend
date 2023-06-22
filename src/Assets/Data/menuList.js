@@ -71,7 +71,7 @@ const menuList = [
     {
         id: 4,
         menuName: 'مهارت نرم',
-        href: '/category/m',
+        href: '/category/softSkill',
         subMenus: []
     },
     {

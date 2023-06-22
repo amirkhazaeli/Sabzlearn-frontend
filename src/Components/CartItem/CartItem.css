@@ -1,0 +1,28 @@
+.cart-item{
+    margin: 1rem 0;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgb(255, 255, 255,.4);
+}
+.cart-item-row{
+    display: flex;
+    align-items: center;
+}
+.cart-item img{
+  width: 100%;
+}
+.cart-item-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.cart-item-left button{
+    background-color: rgb(223, 91, 91);
+    color: white;
+    transition: all .3s ease-in;
+}
+.cart-item-left button:hover{
+    background-color: red;
+}
+.cart-item-modal{
+   color: black;
+}

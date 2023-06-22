@@ -3,13 +3,14 @@ import { Col, Row } from 'react-bootstrap'
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import formatNumber from '../../Assets/Utils/formatNumber'
-export default function CourseIntroduction({courseData}) {
+import formatNumber from '../../Assets/Utils/formatNumber';
+import { Link } from 'react-router-dom';
+export default function CourseIntroduction({ courseData }) {
     console.log(courseData);
     return (
         <div className='course-introduction'>
-            <h1 className='course-introduction-title'> 
-            {courseData.title} 
+            <h1 className='course-introduction-title'>
+                {courseData.title}
             </h1>
             <Row>
                 <Col md={7}>
@@ -27,59 +28,59 @@ export default function CourseIntroduction({courseData}) {
                 </Col>
                 <Col md={5} >
                     <div className='course-introduction-left'>
-                         <Row>
+                        <Row>
                             <Col lg={8}>
-                            <div className='course-tags'> 
-                                <span>{courseData.category}</span>
-                            </div>
+                                <div className='course-tags'>
+                                    <span>{courseData.category}</span>
+                                </div>
                             </Col>
                             <Col lg={4}>
-                            <div className='course-score'>
-                            </div>
+                                <div className='course-score'>
+                                </div>
                             </Col>
-                         </Row>
-                         <div className='course-introduction-price'>
+                        </Row>
+                        <div className='course-introduction-price'>
                             <h1>{formatNumber(courseData.price)}</h1>
-                         </div>
-                         <div className='Course-feature'>
+                        </div>
+                        <div className='Course-feature'>
                             <span>  پــروژه مــحور بودن دوره هــــا</span>
                             <span> پشتیبـــانی دائــــمی محصولات</span>
                             <span>تضمین کیــفیت کلیـه محصولات</span>
-                         </div>
-                         <div className='course-introduction-btns'>
+                        </div>
+                        <div className='course-introduction-btns'>
                             <button className='course-btn Watch-videos-btn'>
-                                   دیدن ویدیوها
+                                دیدن ویدیوها
                             </button>
                             <button className='course-btn status-btn'>
-                                    شما دانشجوی دوره هستید
+                                شما دانشجوی دوره هستید
                             </button>
-                         </div>
+                        </div>
                     </div>
                 </Col>
             </Row>
             <Row>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                    <FontAwesomeIcon icon={faUser} />
-                       <span>مدرس : {courseData.teacherName}   </span>
+                        <FontAwesomeIcon icon={faUser} />
+                        <span>مدرس : {courseData.teacherName}   </span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                    <FontAwesomeIcon icon={faUser} />
-                       <span>وضعیت : {courseData.status}</span>
+                        <FontAwesomeIcon icon={faUser} />
+                        <span>وضعیت : {courseData.status}</span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                    <FontAwesomeIcon icon={faUser} />
-                       <span>تایم درس : {courseData.courseTime}</span>
+                        <FontAwesomeIcon icon={faUser} />
+                        <span>تایم درس : {courseData.courseTime}</span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                    <FontAwesomeIcon icon={faUser} />
-                       <span>داشنجو : {courseData.student} </span>
+                        <FontAwesomeIcon icon={faUser} />
+                        <span>داشنجو : {courseData.student} </span>
                     </div>
                 </Col>
 
@@ -87,7 +88,7 @@ export default function CourseIntroduction({courseData}) {
             <Row>
                 <div className='course-introduction-desc'>
                     <p>
-                      {courseData.desc}
+                        {courseData.desc}
                     </p>
                 </div>
             </Row>

@@ -49,6 +49,7 @@
     display: flex;
     align-items: center;
     column-gap: 1rem;
+ 
 }
 
 .navbar-input input {
@@ -81,10 +82,13 @@
     font-family: var(--font-family);
     font-weight: 600;
 }
-
-.navbar-left svg {
+.navbar-left .navbar-basket-icon{
+    position: relative;
+}
+.navbar-left .navbar-basket-icon svg {
     font-size: 1.3rem;
 }
+
 /* navbar submenu */
 .sub-menu{
     position: absolute;
@@ -117,4 +121,4 @@
 .sub-menu ul li a:hover{
    color: var(--green-color) !important;
 }
-/* responsive */
+

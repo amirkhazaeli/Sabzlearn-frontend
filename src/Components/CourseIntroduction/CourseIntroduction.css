@@ -24,14 +24,11 @@
     row-gap: 5rem;
 }
 .course-tags{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .course-tags span{
-    font-size: .5rem;
-    padding: .5rem;
+    font-size: 1rem;
+    padding: .5rem 1rem;
     border-radius: .5rem;
     background-color: rgb(29, 26, 235);
 }

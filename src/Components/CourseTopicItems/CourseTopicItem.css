@@ -2,8 +2,9 @@
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
-    padding: 1rem .5rem;
-    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-top: 1rem;
 }
 
 .course-topic-item:hover {
@@ -30,7 +31,8 @@
 .course-videos ul li {
     display: flex;
     justify-content: space-between;
-    padding: 1rem .5rem;
+    align-items: center;
+    padding: 1rem;
     border-top: 1px solid rgba(216, 210, 210, 0.4);
 }
 

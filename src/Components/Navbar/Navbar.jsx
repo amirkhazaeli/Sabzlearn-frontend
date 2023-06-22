@@ -2,19 +2,26 @@ import React from 'react'
 import logo from '../../Assets/images/logo.png'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faBars, faUser, faBasketShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faUser, faBasketShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import menuList from '../../Assets/Data/menuList'
 import { Link } from 'react-router-dom';
 import ResponsiveNavbarComponent from '../ResponsiveNavbar/ResponsiveNavbarComponent';
+import Cart from '../Cart/Cart';
 
 
 
 export default function NavbarComponent() {
   const [selectedMenuIndex, setSelectedMenuIndex] = useState(null);
- 
-  
+  const [isActiveCart, setIsActiveCart] = useState(false)
+
+  const handleShowCart = () => {
+    setIsActiveCart(true)
+  }
+  const handleCloseCart = () => {
+    setIsActiveCart(false)
+  }
   function handleMouseOver(index) {
     setSelectedMenuIndex(index);
   }
@@ -51,7 +58,6 @@ export default function NavbarComponent() {
                                   <Link to={subMenu.href}>
                                     {subMenu.courseName}
                                   </Link>
-
                                 </li>
                               ))}
                             </ul>
@@ -78,10 +84,12 @@ export default function NavbarComponent() {
               </Link>
 
             </button>
-            <FontAwesomeIcon icon={faBasketShopping} />
-            <div className='cart'>
-
+            <div className='navbar-basket-icon' onMouseOver={handleShowCart}
+                onMouseLeave={handleCloseCart} >
+              <FontAwesomeIcon icon={faBasketShopping} />
+              <Cart isActiveCart={isActiveCart} />
             </div>
+
           </div>
         </div>
       </Container>

@@ -1,0 +1,34 @@
+/* Navbar Cart Style */
+.navbar-cart {
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    width: 400px;
+    height: 450px;
+    z-index: 999;
+    border-radius: 1rem;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    text-align: center;
+    overflow-x: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.navbar-cart.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar-cart .navbar-cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed;
+    padding-bottom: 1rem;
+}
+
+.navbar-cart .navbar-cart-header button {
+    color: white;
+}

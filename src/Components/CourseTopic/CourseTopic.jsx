@@ -2,7 +2,8 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import CourseTopicItem from '../CourseTopicItems/CourseTopicItem'
 import './CourseTopic.css'
-export default function CourseTopic() {
+export default function CourseTopic({courseData}) {
+    console.log(courseData);
     return (
         <div className='course-topic'>
             <Container fluid='lg'>
@@ -17,7 +18,13 @@ export default function CourseTopic() {
                     </div>
                 </div>
                 <div className='course-topic-content'>
-                    <CourseTopicItem />
+                    {
+                        courseData.CourseParts.map((coursePart)=>(
+                            <CourseTopicItem coursePart={coursePart}/>
+                        ))
+                    }
+                          
+                   
                 </div>
                 </div>
               
