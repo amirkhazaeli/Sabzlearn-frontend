@@ -10,8 +10,6 @@ import { Link } from 'react-router-dom';
 import ResponsiveNavbarComponent from '../ResponsiveNavbar/ResponsiveNavbarComponent';
 import Cart from '../Cart/Cart';
 
-
-
 export default function NavbarComponent() {
   const [selectedMenuIndex, setSelectedMenuIndex] = useState(null);
   const [isActiveCart, setIsActiveCart] = useState(false)

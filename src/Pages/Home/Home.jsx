@@ -44,6 +44,7 @@ export default function Home() {
       <SearchBox onSearch={handleSearch} />
       <ProductComponent courses={courseData} />
       <ArticleSlider />
+      
       {
         isVisibleScrollTopIcon ? (
           <div className='scroll-top-icon'  onClick={() => {

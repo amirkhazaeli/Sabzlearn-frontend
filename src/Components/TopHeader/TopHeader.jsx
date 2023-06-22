@@ -26,9 +26,9 @@ export default function TopHeader() {
                 <div className='top-header-left'>
                     <span>sabzlearn@gmail.com</span>
                     <div className='top-header-icons'>
-                        <FontAwesomeIcon icon={faTelegram} />
-                        <FontAwesomeIcon icon={faInstagram} />
-                        <FontAwesomeIcon icon={faTwitter} />
+                        <FontAwesomeIcon title='Telegram' icon={faTelegram} />
+                        <FontAwesomeIcon title='Instagram' icon={faInstagram} />
+                        <FontAwesomeIcon title='Twitter' icon={faTwitter} />
                     </div>
                 </div>
             </div>

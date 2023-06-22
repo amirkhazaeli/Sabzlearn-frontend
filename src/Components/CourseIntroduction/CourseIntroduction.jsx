@@ -1,39 +1,40 @@
-import {React , useContext, useEffect} from 'react'
+import { React, useContext, useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser,faStar } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../../Assets/Utils/formatNumber';
 import CartContext from '../../Context/CartContext';
 import Swal from 'sweetalert';
+import ReactRating from 'react-rating';
 export default function CourseIntroduction({ courseData }) {
-    const {CartItems,setCartItems} = useContext(CartContext)
+    const { CartItems, setCartItems } = useContext(CartContext)
     const addCourseToCartItems = () => {
         const checkCartItems = CartItems.includes(courseData)
-        if(!checkCartItems){
-            setCartItems([...CartItems,courseData])
+        if (!checkCartItems) {
+            setCartItems([...CartItems, courseData])
             Swal({
                 title: "محصول با موفقیت اضافه شد",
                 icon: "success",
                 buttons: {
-                  confirm: {
-                    text: "OK",
-                    value: true,
-                    visible: true,
-                    className: "btn btn-primary",
-                    closeModal: true
-                  }
+                    confirm: {
+                        text: "OK",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary",
+                        closeModal: true
+                    }
                 }
-              });
-        }else{
+            });
+        } else {
             alert('این محصول قبلا اضافه شده است')
         }
-    
+
     }
     const handleScrollToCourseVideo = () => {
         window.scrollTo(0, 1243);
     }
- 
+
     return (
         <div className='course-introduction'>
             <h1 className='course-introduction-title'>
@@ -55,14 +56,19 @@ export default function CourseIntroduction({ courseData }) {
                 </Col>
                 <Col md={5} >
                     <div className='course-introduction-left'>
-                        <Row>
-                            <Col lg={8}>
+                        <Row className='course-introduction-tags'>
+                            <Col md={12} lg={8}>
                                 <div className='course-tags'>
                                     <span>{courseData.category}</span>
                                 </div>
                             </Col>
                             <Col lg={4}>
                                 <div className='course-score'>
+                                    <ReactRating
+                                        initialRating={courseData.score}
+                                        emptySymbol={<FontAwesomeIcon icon={faStar} />}
+                                        fullSymbol={<FontAwesomeIcon icon={faStar} style={{color: "#fdf50d",}} />}
+                                    />
                                 </div>
                             </Col>
                         </Row>

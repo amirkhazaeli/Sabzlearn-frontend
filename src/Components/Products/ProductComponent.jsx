@@ -25,7 +25,7 @@ export default function ProductComponent({ courses }) {
         <Row className='className="d-flex flex-wrap align-items-stretch"'>
           {showData && showData.length ? (
             showData.map((course) => (
-              <Col xs={6} md={4} lg={3}>
+              <Col key={course.id} xs={6} md={4} lg={3}>
                 <Link to={`/productInfo/${course.id}`}>
                   <ProductItem data={course} />
                 </Link>
