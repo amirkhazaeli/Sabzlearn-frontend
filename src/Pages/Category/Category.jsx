@@ -15,12 +15,12 @@ export default function Category() {
 
   const handleCategoryFilter = () => {
     const courseFilter = courses.filter((course) => {
-      if (param.categoryName == 'front') {
-        return course.category == 'فرانت اند'
-      } else if (param.categoryName == 'security') {
-        return course.category == 'امنیت'
-      } else if (param.categoryName == 'backend') {
-        return course.category == 'بک اند'
+      if (param.categoryName === 'front') {
+        return course.category === 'فرانت اند'
+      } else if (param.categoryName === 'security') {
+        return course.category === 'امنیت'
+      } else if (param.categoryName === 'backend') {
+        return course.category === 'بک اند'
       }
     })
     return courseFilter

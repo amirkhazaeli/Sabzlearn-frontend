@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import ArticleSlider from '../../Components/ArticleSlider/ArticleSlider'
 import ProductComponent from '../../Components/Products/ProductComponent'
 import SearchBox from '../../Components/SearchBox/SearchBox'
@@ -6,7 +6,7 @@ import courses from '../../Assets/Data/courses'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCircleChevronDown} from '@fortawesome/free-solid-svg-icons'
 import './Home.css'
-export default function Home() {
+function Home() {
   const [courseData, setCourseData] = useState(courses);
   const [isVisibleScrollTopIcon, setIsVisibleScrollTopIcon] = useState(false);
 
@@ -58,3 +58,4 @@ export default function Home() {
     </>
   )
 }
+export default memo(Home)

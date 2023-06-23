@@ -1,11 +1,11 @@
 import { React, useState } from 'react'
 import './ResponsiveNavbarComponent.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faBars, faUser, faBasketShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import {  faBars, faUser, faBasketShopping } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../Assets/images/logo.png'
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-export default function ResponsiveNavbarComponent({ }) {
+export default function ResponsiveNavbarComponent() {
     const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false)
 
 

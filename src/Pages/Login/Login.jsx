@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import {  React, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
@@ -7,7 +7,7 @@ import { requiredValueValidator, minValueValidator, maxValueValidator } from '..
 import { useForm } from '../../Hooks/useForm'
 import { Link } from 'react-router-dom'
 import ReCAPTCHA from 'react-google-recaptcha'
-export default function Login() {
+ function Login() {
   const [formState, onInputHandler] = useForm({
     userName: {
       value: '',
@@ -77,3 +77,4 @@ export default function Login() {
     </>
   )
 }
+export default Login

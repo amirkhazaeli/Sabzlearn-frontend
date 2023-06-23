@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import TopHeader from '../../Components/TopHeader/TopHeader'
 
-export default function Header() {
+function Header() {
   return (
     <div className='header-section'>
         <TopHeader />
@@ -11,3 +11,4 @@ export default function Header() {
 
   )
 }
+export default memo(Header)

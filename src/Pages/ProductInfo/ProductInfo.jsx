@@ -1,4 +1,4 @@
-import React, { useEffect, useState  } from 'react'
+import React, { memo, useEffect, useState  } from 'react'
 import { Container } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
@@ -7,7 +7,7 @@ import CourseTopic from '../../Components/CourseTopic/CourseTopic'
 import Header from '../../Layout/Header/Header'
 import courses from '../../Assets/Data/courses'
 
-export default function ProductInfo() {
+function ProductInfo() {
   
     const [courseData,setCourseData] = useState(courses)
     const param = useParams() 
@@ -17,7 +17,7 @@ export default function ProductInfo() {
         return course.id == param.id
      })
      setCourseData(courseFilter)
-    }, [])
+    },[])
 
     return (
         <>
@@ -32,3 +32,4 @@ export default function ProductInfo() {
         </>
     )
 }
+export default memo(ProductInfo)

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { React,memo, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ProductItem from '../ProductItem/ProductItem'
 import './ProductComponent.css'
@@ -7,16 +7,16 @@ import AlertBox from '../AlertBox/AlertBox'
 import PaginationComponent from '../PaginationComponent/PaginationComponent';
 import usePagination from '../../Hooks/usePagination'
 
-export default function ProductComponent({ courses }) {
+function ProductComponent({ courses }) {
   const [showBtn, setShowBtn] = useState(true)
   const [showData, currentPageHandler] = usePagination(courses)
   const location = useLocation()
-  
+
   useEffect(() => {
-    if (location.pathname == '/') {
+    if (location.pathname === '/') {
       setShowBtn(false)
     }
-  }, [])
+  },[location.pathname])
 
   return (
     <div className='product-section' >
@@ -47,3 +47,4 @@ export default function ProductComponent({ courses }) {
     </div>
   )
 }
+export default memo(ProductComponent)

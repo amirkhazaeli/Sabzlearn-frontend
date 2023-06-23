@@ -1,5 +1,5 @@
 import { React } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import {  Container  } from 'react-bootstrap'
 import ArticleSliderItem from '../ArticleSliderItem/ArticleSliderItem'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination, Navigation, Autoplay } from "swiper";
@@ -53,9 +53,6 @@ export default function ArticleSlider() {
                         }
 
                     </Swiper>
-
-
-
                 </div>
             </Container>
 

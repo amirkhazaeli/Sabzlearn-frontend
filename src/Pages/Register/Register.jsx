@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
@@ -7,7 +7,7 @@ import { requiredValueValidator, minValueValidator, maxValueValidator, emailValu
 import {useForm} from '../../Hooks/useForm'
 import { Link } from 'react-router-dom'
 import ReCAPTCHA from 'react-google-recaptcha'
-export default function Regeister() {
+function Regeister() {
   const [formState, onInputHandler] = useForm({
     userName: {
       value: '',
@@ -95,3 +95,4 @@ export default function Regeister() {
     </>
   )
 }
+export default memo(Regeister)

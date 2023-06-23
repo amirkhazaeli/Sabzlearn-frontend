@@ -1,11 +1,11 @@
-import { React, useState } from 'react'
+import { memo, React, useState } from 'react'
 import './PaginationComponent.css'
 
 import Pagination from 'react-bootstrap/Pagination';
-export default function PaginationComponent({ data, currentPageHandler, pageSize  }) {
+ function PaginationComponent({ data, currentPageHandler, pageSize  }) {
 
   const [selectPage, setSelectPage] = useState(null)
-  
+
   const pagesNumber = Array.from({ length: Math.ceil(data.length / pageSize) }, (_, index) => index + 1);
 
   const scrollToTop = () => window.scrollTo(0,0)
@@ -35,3 +35,5 @@ export default function PaginationComponent({ data, currentPageHandler, pageSize
     </>
   )
 }
+
+export default memo(PaginationComponent)

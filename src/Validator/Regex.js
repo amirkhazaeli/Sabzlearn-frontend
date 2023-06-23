@@ -3,7 +3,4 @@ const testEmail = (value) => {
     return emailPattern.test(value)
 }
 
-
-
-
-export default {testEmail}
+export default testEmail

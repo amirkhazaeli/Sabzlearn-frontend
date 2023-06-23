@@ -1,4 +1,4 @@
-import { React, useContext, useEffect } from 'react'
+import { React, useContext } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

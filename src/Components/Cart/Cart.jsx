@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import CartItemComponent from '../CartItemComponent/CartItemComponent'
 import './Cart.css'
 import CartContext from '../../Context/CartContext'
-export default function Cart({ isActiveCart }) {
+function Cart({ isActiveCart }) {
     const { CartItems, setCartItems } = useContext(CartContext)
 
     return (
@@ -29,3 +29,4 @@ export default function Cart({ isActiveCart }) {
         </div>
     )
 }
+export default memo(Cart)

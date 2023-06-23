@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import './ArticleItem.css'
 import { motion } from 'framer-motion';
 export default function ArticleItem({ article }) {

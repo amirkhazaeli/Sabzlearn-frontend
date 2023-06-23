@@ -1,6 +1,5 @@
 import React from 'react'
 import './ArticleSliderItem.css'
-import Article from '../../Assets/images/article.jpg'
 export default function ArticleSliderItem({article}) {
   return (
     <div className='article-slider-item'>
