@@ -27,13 +27,12 @@ export default function Input(props) {
         props.onInputHandler(props.id , mainInput.value , mainInput.isValid)
     }, [mainInput.value])
 
-    const onChangeHandler = (e) => {
-        Dispatch({
+    const onChangeHandler = (e) => Dispatch({
             type: 'CHANGE',
             value: e.target.value,
             validitation: props.validitation
         })
-    }
+    
     return (
         <>
             {

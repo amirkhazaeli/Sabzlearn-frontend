@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import { React, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Input from '../../Components/Input/Input'
 import Header from '../../Layout/Header/Header'
@@ -20,9 +20,8 @@ export default function Login() {
   }, false)
   const [isGoogleRecaptchaVerify, setIsGoogleRecaptchaVerify] = useState(false)
 
-  const onChangeHandler = () => {
-    setIsGoogleRecaptchaVerify(true)
-  }
+  const onChangeHandler = () => setIsGoogleRecaptchaVerify(true)
+  
   return (
     <>
       <Header />
@@ -62,14 +61,14 @@ export default function Login() {
                 }
                 onInputHandler={onInputHandler}
               />
-              <ReCAPTCHA sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' onChange={onChangeHandler} />
+              <div className='google-ReCAPTCHA'>
+                <ReCAPTCHA sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' onChange={onChangeHandler} />
+              </div>
+
               <button
                 disabled={(!formState.isFormValid || isGoogleRecaptchaVerify)}
                 className={(formState.isFormValid && isGoogleRecaptchaVerify) ? 'succes' : 'error'}>ورود</button>
               <h3>رمز عبور را فراموش کرده اید؟</h3>
-            </div>
-            <div className='login-box-footer'>
-
             </div>
           </div>
 

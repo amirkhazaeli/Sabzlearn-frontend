@@ -89,36 +89,5 @@
     font-size: 1.3rem;
 }
 
-/* navbar submenu */
-.sub-menu{
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    top: 2rem;
-    right: -1rem;
-    z-index: 999;
-    background-color: var(--secondary-color) ;
-    width: 120px;
-    border-radius: 1rem;
-    padding: 1rem;
-    transition: all .3s;
-    width: 200px;
-}
-.sub-menu.active{
-    opacity: 1;
-    visibility: visible;
-}
-.sub-menu ul{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 1rem;
-    
-}
-.sub-menu ul li{
-    padding: .5rem;
-}
-.sub-menu ul li a:hover{
-   color: var(--green-color) !important;
-}
+
 

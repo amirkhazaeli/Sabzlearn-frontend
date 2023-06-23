@@ -21,6 +21,7 @@ export default function ProductInfo() {
 
     return (
         <>
+         
             <Header />
             <Container fluid='lg'>
                 <BreadCrumb />

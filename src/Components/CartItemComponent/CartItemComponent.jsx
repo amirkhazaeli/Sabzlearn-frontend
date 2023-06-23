@@ -46,6 +46,7 @@ export default function CartItemComponent({ cartItemData }) {
           </div>
         </Col>
       </Row>
+      
       {/*Delete Item  Modal*/}
       <Modal show={showModal} onHide={handleCloseModal} className='cart-item-modal'>
         <Modal.Header closeButton>

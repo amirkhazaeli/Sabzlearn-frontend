@@ -76,7 +76,10 @@ export default function Regeister() {
                 }
                 onInputHandler={onInputHandler}
                 />
+                <div className='google-ReCAPTCHA'>
                 <ReCAPTCHA sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' onChange={onChangeHandler}/>
+                </div>
+             
               <button
               disabled={(!formState.isFormValid || isGoogleRecaptchaVerify)}
               className={(formState.isFormValid && isGoogleRecaptchaVerify )? 'succes' : 'error'}

@@ -10,8 +10,8 @@ import usePagination from '../../Hooks/usePagination'
 export default function ProductComponent({ courses }) {
   const [showBtn, setShowBtn] = useState(true)
   const [showData, currentPageHandler] = usePagination(courses)
-
   const location = useLocation()
+  
   useEffect(() => {
     if (location.pathname == '/') {
       setShowBtn(false)
@@ -22,7 +22,7 @@ export default function ProductComponent({ courses }) {
     <div className='product-section' >
       <Container fluid='lg'>
 
-        <Row className='className="d-flex flex-wrap align-items-stretch"'>
+        <Row>
           {showData && showData.length ? (
             showData.map((course) => (
               <Col key={course.id} xs={6} md={4} lg={3}>

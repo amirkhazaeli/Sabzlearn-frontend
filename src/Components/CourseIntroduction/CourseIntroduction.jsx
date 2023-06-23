@@ -2,13 +2,14 @@ import { React, useContext, useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import './CourseIntroduction.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser,faStar } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faStar, faHourglassHalf,faUsers,faTemperatureQuarter } from '@fortawesome/free-solid-svg-icons';
 import formatNumber from '../../Assets/Utils/formatNumber';
 import CartContext from '../../Context/CartContext';
 import Swal from 'sweetalert';
 import ReactRating from 'react-rating';
 export default function CourseIntroduction({ courseData }) {
     const { CartItems, setCartItems } = useContext(CartContext)
+
     const addCourseToCartItems = () => {
         const checkCartItems = CartItems.includes(courseData)
         if (!checkCartItems) {
@@ -31,9 +32,8 @@ export default function CourseIntroduction({ courseData }) {
         }
 
     }
-    const handleScrollToCourseVideo = () => {
-        window.scrollTo(0, 1243);
-    }
+    const handleScrollToCourseVideo = () => window.scrollTo(0, 1243);
+
 
     return (
         <div className='course-introduction'>
@@ -67,7 +67,7 @@ export default function CourseIntroduction({ courseData }) {
                                     <ReactRating
                                         initialRating={courseData.score}
                                         emptySymbol={<FontAwesomeIcon icon={faStar} />}
-                                        fullSymbol={<FontAwesomeIcon icon={faStar} style={{color: "#fdf50d",}} />}
+                                        fullSymbol={<FontAwesomeIcon icon={faStar} style={{ color: "#fdf50d", }} />}
                                     />
                                 </div>
                             </Col>
@@ -100,19 +100,19 @@ export default function CourseIntroduction({ courseData }) {
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                        <FontAwesomeIcon icon={faUser} />
+                    <FontAwesomeIcon icon={faTemperatureQuarter} />
                         <span>وضعیت : {courseData.status}</span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                        <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon icon={faHourglassHalf} />
                         <span>تایم درس : {courseData.courseTime}</span>
                     </div>
                 </Col>
                 <Col xs={6} lg={3}>
                     <div className='course-info-item'>
-                        <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon icon={faUsers} />
                         <span>داشنجو : {courseData.student} </span>
                     </div>
                 </Col>

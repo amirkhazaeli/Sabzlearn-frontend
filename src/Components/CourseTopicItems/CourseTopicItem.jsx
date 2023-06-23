@@ -5,9 +5,11 @@ import { faPlus, faVideo } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 export default function CourseTopicItem({ coursePart }) {
     const [activeClass, setActiveClass] = useState(false)
+
+    const handleActiveClass = () => setActiveClass(!activeClass)
     return (
         <div className='course-topic-item'>
-            <div className='course-topic-item-title' onClick={() => setActiveClass(!activeClass)}>
+            <div className='course-topic-item-title' onClick={handleActiveClass}>
                 <h3>{coursePart.title}</h3>
                 <FontAwesomeIcon icon={faPlus} />
             </div>

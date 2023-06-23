@@ -11,7 +11,7 @@ export default function ArticlesComponent() {
     <div className='Articles-wrapper'>
       {showData && showData.length ? (
         showData.map((article) => (
-          <ArticleItem article={article} />
+          <ArticleItem key={article.id} article={article} />
         ))
       ) : (
         <AlertBox title='مقاله ای وجود ندارد' />

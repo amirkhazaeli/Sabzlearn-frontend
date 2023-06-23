@@ -44,7 +44,7 @@ export default function ArticleSlider() {
                     >
                         {
                             articles.map((article) => (
-                                <SwiperSlide>
+                                <SwiperSlide key={article.id}>
                                     <Link to='/article'>
                                         <ArticleSliderItem article={article} />
                                     </Link>

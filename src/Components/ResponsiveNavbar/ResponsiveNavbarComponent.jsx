@@ -1,21 +1,23 @@
-import {React,useState} from 'react'
+import { React, useState } from 'react'
 import './ResponsiveNavbarComponent.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faBars, faUser, faBasketShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../Assets/images/logo.png'
 import { Container } from 'react-bootstrap';
-export default function ResponsiveNavbarComponent({}) {
+import { Link } from 'react-router-dom';
+export default function ResponsiveNavbarComponent({ }) {
     const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false)
 
-    function handleShowSidebar() {
-        setShowResponsiveSidebar(!showResponsiveSidebar)
-      }
+
+
+    const handleShowSidebar = () => setShowResponsiveSidebar(!showResponsiveSidebar)
+    
 
     return (
         <Container fluid>
             <div className='navbar-responsive'>
                 <div className='navbar-menu-icon'>
-                    <FontAwesomeIcon icon={faBars} onClick={handleShowSidebar}/>
+                    <FontAwesomeIcon icon={faBars} onClick={handleShowSidebar} />
                     <div className={`sidebar ${showResponsiveSidebar && 'active'}`} >
                         <div>
                             <div className='sidebar-close-icon'>
@@ -40,9 +42,15 @@ export default function ResponsiveNavbarComponent({}) {
                 </div>
                 <div className='icons'>
                     <button>
-                        <FontAwesomeIcon icon={faUser} />
+                        <Link to='/login'>
+                            <FontAwesomeIcon icon={faUser} />
+                        </Link>
+
                     </button>
                     <FontAwesomeIcon icon={faBasketShopping} />
+
+
+
                 </div>
             </div>
         </Container>

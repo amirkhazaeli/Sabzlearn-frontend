@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import './ArticleSideBar.css'
 import ArticleSideBarItem from '../ArticleSideBarItem/ArticleSideBarItem';
-import courses from '../../Assets/Data/courses'
+import { Link } from 'react-router-dom';
 export default function ArticleSideBar({CoursesFilter}) {
     return (
         <motion.div
@@ -15,7 +15,10 @@ export default function ArticleSideBar({CoursesFilter}) {
             <div className='article-sidebar-items'>
                 {
                     CoursesFilter.map((course)=>(
-                        <ArticleSideBarItem course={course}/>
+                        <Link to={`/productInfo/${course.id}`}>
+                          <ArticleSideBarItem course={course}/>
+                        </Link>
+                      
                     ))
                 }
            

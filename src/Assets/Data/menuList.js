@@ -5,20 +5,24 @@ const menuList = [
         href: '/category/front',
         subMenus: [
             {
-                courseName: 'آموزش HTML',
-                href: '/productInfo/2',
+                id: 1,
+                courseName: 'آموزش React',
+                href: '/productInfo/4',
             },
             {
-                courseName: 'آموزش Css',
-                href: '/productInfo/2',
+                id: 2,
+                courseName: 'آموزش Redux',
+                href: '/productInfo/5',
             },
             {
-                courseName: 'آموزش جاوااسکریپت',
-                href: '/productInfo/2',
+                id: 3,
+                courseName: 'آموزش Next.js',
+                href: '/productInfo/6',
             },
             {
-                courseName: 'آموزش ری اکت',
-                href: '/productInfo/2',
+                id: 4,
+                courseName: 'آموزش جامع Css3',
+                href: '/productInfo/15',
             },
         ]
     },
@@ -28,20 +32,8 @@ const menuList = [
         href: '/category/security',
         subMenus: [
             {
-                courseName: 'آموزش HTML',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش Css',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش جاوااسکریپت',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش ری اکت',
-                href: '/productInfo/2',
+                courseName: 'اموزش لینوکس با گرایش امنیت',
+                href: '/productInfo/1',
             },
         ]
     },
@@ -51,19 +43,11 @@ const menuList = [
         href: '/category/backend',
         subMenus: [
             {
-                courseName: 'آموزش HTML',
-                href: '/productInfo/2',
+                courseName: 'آموزش پایتون رایگان',
+                href: '/productInfo/3',
             },
             {
-                courseName: 'آموزش Css',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش جاوااسکریپت',
-                href: '/productInfo/2',
-            },
-            {
-                courseName: 'آموزش ری اکت',
+                courseName: 'آموزش حرفه ای NodeJS ',
                 href: '/productInfo/2',
             },
         ]

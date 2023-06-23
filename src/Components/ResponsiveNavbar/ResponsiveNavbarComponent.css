@@ -25,6 +25,7 @@
 }
 .navbar-responsive .icons button{
     padding: .4rem;
+    text-align: center;
 }
 .sidebar{
     background-color: white;

@@ -19,7 +19,7 @@ export default function CourseTopic({courseData}) {
                 <div className='course-topic-content'>
                     {
                         courseData.CourseParts.map((coursePart)=>(
-                            <CourseTopicItem coursePart={coursePart}/>
+                            <CourseTopicItem key={coursePart.id} coursePart={coursePart}/>
                         ))
                     }
                           
